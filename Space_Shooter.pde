@@ -36,7 +36,8 @@ void draw () {
   if (gameState == 0) {
     rectMode(CENTER);
     fill(0);
-    rect(200, 200, 400, 400);
+    rect(200, 20, 400, 40);
+    rect(200, 380, 400, 40);
     fill(255);
     textSize(20);
     text("Space Shooter", 150, 120);
