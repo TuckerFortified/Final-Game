@@ -38,5 +38,13 @@ class background_details {
     ellipse(position.x, position.y, starSize, starSize);
 
     //If the star is off the screen reset the x position, and randomize the y position and speed
+    if (position.x < -20) {
+      position.x = 420;
+      position.y = random(0, 400);
+      velocity.x = random(-1, -10);
+      velocity.y = random(-2, 2);
+      print(velocity.x);
+    }
+    
   }
 }
