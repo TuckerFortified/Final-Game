@@ -13,10 +13,10 @@ class background_details {
     velocity = new PVector(0, 0);
   }
   
-  void setup () {
+  void startUp () {
     
     //Set random position and speed for vectors
-    position.x = 420;
+    position.x = random(420, 800);
     position.y = random(0, 400);
     velocity.x = random(-1, -10);
     velocity.y = random(-2, 2);
@@ -29,10 +29,10 @@ class background_details {
 
     //Change the value of the vector by adding the speed value
     position.x = position.x + velocity.x;
-    position.y = position.y = velocity.y;
+    position.y = position.y + velocity.y;
 
     //Draw the star at the value of the vector
-    fill(0);
+    fill(255);
     noStroke();
     ellipseMode(CENTER);
     ellipse(position.x, position.y, starSize, starSize);
