@@ -1,4 +1,5 @@
 //Declare varriables
+int gameState = 0;
 
 //Declare objects
 background_details[] star = new background_details[40];
@@ -27,16 +28,22 @@ void draw () {
   background(10, 0, 50);
   
   //Use an IF statement to see if the game has started or not, and if not then put a start screen.If else do the following to start the game:
-  
-  //Call the background details display function that will move and display the stars flying past the player.
-  for (int i = 0; i < 40; i++) {
-    star[i].display();
+  if (gameState == 0) {
   }
   
-  //Call the player objects move function that will receive input from the key pressed and released functions.
+  //Call the background details display function that will move and display the stars flying past the player.
+  if (gameState == 1) {
+    for (int i = 0; i < 40; i++) {
+      star[i].display();
+    }
   
-  //Call the meteor objects display function that will move and draw the meteor objects, as well as randomize their spawn locations, speeds, loop their movements, and check for the player collision.
-
+  
+    //Call the player objects move function that will receive input from the key pressed and released functions.
+  
+    //Call the meteor objects display function that will move and draw the meteor objects, as well as randomize their spawn locations, speeds, loop their movements, and check for the player collision.
+  }
+  if (gameState == 2) {
+  }
 }
 
 void keyPressed () {
