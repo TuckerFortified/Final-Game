@@ -13,6 +13,7 @@ PVector playerPosition;
 //Declare objects
 background_details[] star = new background_details[40];
 player spaceShip;
+meteor[] asteriod = new meteor[3];
 
 void setup () {
   
@@ -27,6 +28,9 @@ void setup () {
   spaceShip = new player();
   
   //Set up a for loop with an array to create multiple meteor objects
+  for (int i = 0; i < 3; i++) {
+    asteriod[i] = new meteor();
+  }
   
   //Set up a for loop with an array to create multiple background detail objects
   for (int i = 0; i < 40; i++) {
@@ -57,6 +61,9 @@ void draw () {
     text("Space Shooter", 150, 120);
     textSize(15);
     text("Press Space", 170, 170);
+    for (int i = 0; i > 3; i++) {
+      asteriod[i].reset();
+    }
   }
   
   //This IF statement checks if the player has began the game
