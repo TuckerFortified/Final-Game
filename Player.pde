@@ -3,8 +3,8 @@ class player {
   //Establish vectors
   PVector position;
   
-  player () {
-    position = new PVector(0, 0);
+  player (float x, float y) {
+    position = new PVector(x, y);
   }
   
   //Function to hide the player off camera
@@ -50,7 +50,7 @@ class player {
 
 
     //Update the collision values of the spaceship
-    playerPosition = position;
+    //playerPosition = position;
     //print(playerPosition);
     //playerCollisionX = int(position.x);
     //playerCollisionY = int(position.y);

@@ -136,7 +136,8 @@ class meteor {
     if (i == 3) {
       s = random(-2, 2);
     }
+    i = s;
     println(s);
-    return s;
+    return i;
   }
 }

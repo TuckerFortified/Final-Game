@@ -25,7 +25,7 @@ void setup () {
   playerPosition = new PVector(0,0);
   
   //Setting up player object
-  spaceShip = new player();
+  spaceShip = new player(-200, 200);
   
   //Set up a for loop with an array to create multiple meteor objects
   for (int i = 0; i < 3; i++) {
@@ -44,6 +44,9 @@ void draw () {
   
   //Draw the background
   background(10, 0, 50);
+  
+  //Update the players collision
+  playerPosition = spaceShip.position;
   
   //Call the background details display function that will move and display the stars flying past the player.
   for (int i = 0; i < 40; i++) {
