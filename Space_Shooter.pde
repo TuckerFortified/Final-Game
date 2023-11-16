@@ -1,7 +1,7 @@
 //Declare varriables
 
 //Declare objects
-background_details[] star = new background_details[20];
+background_details[] star = new background_details[40];
 
 void setup () {
   
@@ -14,7 +14,7 @@ void setup () {
   //Set up a for loop with an array to create multiple meteor objects
   
   //Set up a for loop with an array to create multiple background detail objects
-  for (int i = 0; i < 20; i++) {
+  for (int i = 0; i < 40; i++) {
     star[i] = new background_details();
     star[i].startUp();
   }
@@ -29,7 +29,7 @@ void draw () {
   //Use an IF statement to see if the game has started or not, and if not then put a start screen.If else do the following to start the game:
   
   //Call the background details display function that will move and display the stars flying past the player.
-  for (int i = 0; i < 20; i++) {
+  for (int i = 0; i < 40; i++) {
     star[i].display();
   }
   
