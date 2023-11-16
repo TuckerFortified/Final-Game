@@ -29,6 +29,10 @@ class player {
       position.x = position.x + 1;
     }
     
+    //Making it so the player cannot leave the screen
+    position.x = constrain(position.x, 45, 360);
+    position.y = constrain(position.y, 15, 385);
+    
     //Draw the spaceship at the position of the vector
     fill(100);
     triangle(position.x - 20, position.y - 15, position.x - 20, position.y, position.x + 40, position.y);
