@@ -4,9 +4,12 @@ boolean goUp = false;
 boolean goDown = false;
 boolean goLeft = false;
 boolean goRight = false;
+int playerCollisionX;
+int playerCollisionY;
 
 //Declare objects
 background_details[] star = new background_details[40];
+player spaceShip;
 
 void setup () {
   
@@ -15,6 +18,7 @@ void setup () {
   background(10, 0, 50);
   
   //Setting up player object
+  spaceShip = new player();
   
   //Set up a for loop with an array to create multiple meteor objects
   
@@ -53,7 +57,7 @@ void draw () {
   if (gameState == 1) {
   
     //Call the player objects move function that will receive input from the key pressed and released functions.
-  
+    spaceShip.move();  
     //Call the meteor objects display function that will move and draw the meteor objects, as well as randomize their spawn locations, speeds, loop their movements, and check for the player collision.
   }
   
@@ -94,9 +98,10 @@ void keyPressed () {
     goRight = true;
   }
   
-  //If Space bar pressed, begin game
+  //If Space bar pressed, begin game and reset the player's location
   if (key == ' ' && gameState == 0) {
     gameState = 1;
+    spaceShip.reset();
   }
   
   //If the player is dead, press R to go back to tile screen
