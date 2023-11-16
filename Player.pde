@@ -51,7 +51,7 @@ class player {
 
     //Update the collision values of the spaceship
     playerPosition = position;
-    print(playerPosition);
+    //print(playerPosition);
     //playerCollisionX = int(position.x);
     //playerCollisionY = int(position.y);
     //print(playerCollisionX);

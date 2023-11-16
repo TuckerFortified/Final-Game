@@ -4,7 +4,7 @@ class meteor {
   PVector position;
   PVector velocity;
   
-  void meteor () {
+  meteor () {
     position = new PVector(500, 200);
     velocity = new PVector(0, 0);
   }
@@ -14,7 +14,7 @@ class meteor {
     position.x = values(0);
     position.y = values(1);
     velocity.x = values(2);
-    position.x = values(3);
+    velocity.y = values(3);
     println(position.x);
   }
   
@@ -23,6 +23,7 @@ class meteor {
     //Update the position of the vector
     position.x = position.x + velocity.x;
     position.y = position.y + velocity.y;
+    println(position.x);
     
     //Draw the meteor at the position of the vector
     if (velocity.x > -3) {
