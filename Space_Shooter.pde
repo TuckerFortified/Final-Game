@@ -1,5 +1,9 @@
 //Declare varriables
 int gameState = 0;
+boolean goUp = false;
+boolean goDown = false;
+boolean goLeft = false;
+boolean goRight = false;
 
 //Declare objects
 background_details[] star = new background_details[40];
@@ -69,13 +73,26 @@ void draw () {
 
 void keyPressed () {
   print(key);
+  
   //If w key pressed, set goUp to true
+  if (key == 'w' || key == 'W') {
+    goUp = true;
+  }
   
   //If S key pressed, set goDown to true
+  if (key == 's' || key == 'S') {
+    goDown = true;
+  }
   
   //If A key pressed, set goLeft to true
+  if (key == 'a' || key == 'A') {
+    goLeft = true;
+  }
   
   //If D key pressed, set goRight to true
+  if (key == 'd' || key == 'D') {
+    goRight = true;
+  }
   
   //If Space bar pressed, begin game
   if (key == ' ' && gameState == 0) {
@@ -89,12 +106,25 @@ void keyPressed () {
 }
 
 void keyReleased () {
+  
   //If w key pressed, set goUp to false
+  if (key == 'w' || key == 'W') {
+    goUp = false;
+    print(goUp);
+  }
   
   //If S key pressed, set goDown to false
+  if (key == 's' || key == 'S') {
+    goDown = false;
+  }
   
   //If A key pressed, set goLeft to false
+  if (key == 'a' || key == 'A') {
+    goLeft = false;
+  }
   
   //If D key pressed, set goRight to false
-  
+  if (key == 'd' || key == 'D') {
+    goRight = false;
+  }
 }
