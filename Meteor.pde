@@ -85,19 +85,20 @@ class meteor {
     
   //Function that generates x & y for position and velocity vectors depending on what number is put in it  
   float values (float i) {
+    float s = 0;
     if (i == 0) {
-      i = random(450, 700);
+      s = random(450, 700);
     }
     if (i == 1) {
-      i = random(0, 400);
+      s = random(0, 400);
     }
     if (i == 2) {
-      i = random(-10, -1);
+      s = random(-10, -1);
     }
     if (i == 3) {
-      i = random(-2, 2);
+      s = random(-2, 2);
     }
-    println(i);
-    return i;
+    println(s);
+    return s;
   }
 }
