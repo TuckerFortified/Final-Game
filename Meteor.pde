@@ -1,5 +1,8 @@
 class meteor {
   
+  //Establish variables
+  float collision = 0;
+  
   //Establish vectors
   PVector position;
   PVector velocity;
@@ -52,7 +55,25 @@ class meteor {
     //Update the collision values of the meteor
 
     //If the collision is overlapping with the player collision, then draw a death screen, and then set the gamestart to false
-
+    collision = dist(position.x, position.y, playerPosition.x, playerPosition.y);
+    if (velocity.x < -7) {
+      if (collision < 10) {
+        gameState = 2;
+      }
+    }
+    if (velocity.x < -3 && velocity.x > -7) {
+      if (collision < 20) {
+        gameState = 2;
+      }
+    }
+    if (velocity.x > -3) {
+      if (collision < 30) {
+        gameState = 2;
+      }
+    }
+    
+    
+    
     //If the meteor is off of the screen, reset the position and randomize the direction
     if (position.x < -40 || position.y > 440 || position.y < -40) {
     position.x = values(0);
