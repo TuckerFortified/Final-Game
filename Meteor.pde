@@ -15,19 +15,45 @@ class meteor {
     position.y = values(1);
     velocity.x = values(2);
     position.x = values(3);
+    println(position.x);
   }
   
-  //Inside the display function:
+  void display () {
 
     //Update the position of the vector
-
+    position.x = position.x + velocity.x;
+    position.y = position.y + velocity.y;
+    
     //Draw the meteor at the position of the vector
-
+    if (velocity.x > -3) {
+      fill(100, 51, 51);
+      ellipse(position.x, position.y, 20, 20);
+      fill(70, 20, 20);
+      ellipse(position.x + 2, position.y - 5, 4, 4);
+      ellipse(position.x, position.y + 4, 4, 4);
+    }
+    if (velocity.x < -3 && velocity.x > -7) {
+      fill(100, 51, 51);
+      ellipse(position.x, position.y, 40, 40);
+      fill(70, 20, 20);
+      ellipse(position.x - 10, position.y, 10, 10);
+      ellipse(position.x + 7, position.y - 3, 10, 10);
+    }
+    if (velocity.x < -7) {
+      fill(100, 51, 51);
+      ellipse(position.x, position.y, 60, 60);
+      fill(70, 20, 20);
+      ellipse(position.x - 10, position.y - 10, 2, 2);
+      ellipse(position.x + 15, position.y + 2, 4, 4);
+      ellipse(position.x - 5, position.y + 20, 8, 8);
+    }
+    
     //Update the collision values of the meteor
 
     //If the collision is overlapping with the player collision, then draw a death screen, and then set the gamestart to false
 
     //If the meteor is off of the screen, reset the position and randomize the direction
+  }
     
   //Function that generates x & y for position and velocity vectors depending on what number is put in it  
   float values (float i) {
@@ -43,6 +69,7 @@ class meteor {
     if (i == 3) {
       i = random(-2, 2);
     }
+    println(i);
     return i;
   }
 }

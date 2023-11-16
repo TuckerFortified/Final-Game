@@ -61,7 +61,7 @@ void draw () {
     text("Space Shooter", 150, 120);
     textSize(15);
     text("Press Space", 170, 170);
-    for (int i = 0; i > 3; i++) {
+    for (int i = 0; i < 3; i++) {
       asteriod[i].reset();
     }
   }
@@ -71,7 +71,12 @@ void draw () {
   
     //Call the player objects move function that will receive input from the key pressed and released functions.
     spaceShip.move();  
+    
     //Call the meteor objects display function that will move and draw the meteor objects, as well as randomize their spawn locations, speeds, loop their movements, and check for the player collision.
+    for (int i = 0; i < 3; i++) {
+      asteriod[i].display();
+    }
+
   }
   
   //This IF statement checks if the player died

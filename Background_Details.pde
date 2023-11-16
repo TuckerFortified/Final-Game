@@ -47,7 +47,7 @@ class background_details {
       position.y = random(0, 400);
       velocity.x = random(-10, -1);
       velocity.y = random(-0.2, 0.2);
-      print(velocity.x);
+      //print(velocity.x);
       if (velocity.x > -5) {
         starSize = int(random(1, 2.9));
       }
