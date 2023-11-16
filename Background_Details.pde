@@ -16,13 +16,18 @@ class background_details {
   void startUp () {
     
     //Set random position and speed for vectors
-    position.x = random(420, 800);
+    position.x = random(0, 800);
     position.y = random(0, 400);
-    velocity.x = random(-1, -10);
-    velocity.y = random(-1, 1);
+    velocity.x = random(-10, -1);
+    velocity.y = random(-0.3, 0.3);
     
     //Set random size of the star
-    starSize = int(random(1, 4.9));
+    if (velocity.x > -5) {
+    starSize = int(random(1, 2.9));
+    }
+    else {
+      starSize = int(random(3, 4.9));
+    }
   }
   
   void display () {
@@ -41,9 +46,15 @@ class background_details {
     if (position.x < -20) {
       position.x = 420;
       position.y = random(0, 400);
-      velocity.x = random(-1, -10);
-      velocity.y = random(-1, 1);
+      velocity.x = random(-10, -1);
+      velocity.y = random(-0.3, 0.3);
       print(velocity.x);
+      if (velocity.x > -5) {
+        starSize = int(random(1, 2.9));
+      }
+      else {
+        starSize = int(random(3, 4.9));
+    }
     }
     
   }
