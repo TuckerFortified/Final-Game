@@ -55,26 +55,45 @@ void draw () {
   
   //This IF statement checks if the player died
   if (gameState == 2) {
+    rectMode(CENTER);
+    fill(0);
+    rect(200, 20, 400, 40);
+    rect(200, 380, 400, 40);
+    fill(255);
+    textSize(20);
+    text("You Died!", 175, 160);
+    textSize(15);
+    text("Press R to return to title screen", 120, 190);
   }
 }
 
 void keyPressed () {
-  //If w key pressed, set goUp to true.
+  print(key);
+  //If w key pressed, set goUp to true
   
-  //If S key pressed, set goDown to true.
+  //If S key pressed, set goDown to true
   
-  //If A key pressed, set goLeft to true.
+  //If A key pressed, set goLeft to true
   
-  //If D key pressed, set goRight to true.
+  //If D key pressed, set goRight to true
   
+  //If Space bar pressed, begin game
+  if (key == ' ' && gameState == 0) {
+    gameState = 1;
+  }
+  
+  //If the player is dead, press R to go back to tile screen
+  if (key == 'r' && gameState == 2) {
+    gameState = 0;
+  }
 }
 
 void keyReleased () {
-  //If w key pressed, set goUp to false.
+  //If w key pressed, set goUp to false
   
-  //If S key pressed, set goDown to false.
+  //If S key pressed, set goDown to false
   
-  //If A key pressed, set goLeft to false.
+  //If A key pressed, set goLeft to false
   
   //If D key pressed, set goRight to false
   
