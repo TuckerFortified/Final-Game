@@ -39,7 +39,6 @@ class background_details {
     //Draw the star at the value of the vector
     fill(255);
     noStroke();
-    ellipseMode(CENTER);
     ellipse(position.x, position.y, starSize, starSize);
 
     //If the star is off the screen reset the x position, and randomize the y position and speed

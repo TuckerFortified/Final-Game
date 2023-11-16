@@ -27,21 +27,32 @@ void draw () {
   //Draw the background
   background(10, 0, 50);
   
-  //Use an IF statement to see if the game has started or not, and if not then put a start screen.If else do the following to start the game:
-  if (gameState == 0) {
-  }
-  
   //Call the background details display function that will move and display the stars flying past the player.
-  if (gameState == 1) {
-    for (int i = 0; i < 40; i++) {
+  for (int i = 0; i < 40; i++) {
       star[i].display();
     }
+    
+  //Use an IF statement to see if the game has started or not, and if not then put a start screen.
+  if (gameState == 0) {
+    rectMode(CENTER);
+    fill(0);
+    rect(200, 200, 400, 400);
+    fill(255);
+    textSize(20);
+    text("Space Shooter", 150, 120);
+    textSize(15);
+    text("Press Space", 170, 170);
+  }
   
+  //This IF statement checks if the player has began the game
+  if (gameState == 1) {
   
     //Call the player objects move function that will receive input from the key pressed and released functions.
   
     //Call the meteor objects display function that will move and draw the meteor objects, as well as randomize their spawn locations, speeds, loop their movements, and check for the player collision.
   }
+  
+  //This IF statement checks if the player died
   if (gameState == 2) {
   }
 }
