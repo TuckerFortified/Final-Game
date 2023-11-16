@@ -4,8 +4,11 @@ boolean goUp = false;
 boolean goDown = false;
 boolean goLeft = false;
 boolean goRight = false;
-int playerCollisionX;
-int playerCollisionY;
+//int playerCollisionX;
+//int playerCollisionY;
+
+//Declare vectors
+PVector playerPosition;
 
 //Declare objects
 background_details[] star = new background_details[40];
@@ -16,6 +19,9 @@ void setup () {
   //Setting the size and background
   size(400, 400);
   background(10, 0, 50);
+  
+  //Setting up vectors
+  playerPosition = new PVector(0,0);
   
   //Setting up player object
   spaceShip = new player();
