@@ -2,6 +2,7 @@ class meteor {
   
   //Establish variables
   float collision = 0;
+  int outOfBounds = 4;
   
   //Establish vectors
   PVector position;
@@ -75,13 +76,50 @@ class meteor {
     
     
     //If the meteor is off of the screen, reset the position and randomize the direction
-    if (position.x < -40 || position.y > 440 || position.y < -40) {
-    position.x = values(0);
-    position.y = values(1);
-    velocity.x = values(2);
-    velocity.y = values(3);
+    //if (position.x < -40 || position.y > 440 || position.y < -40) {
+    //position.x = values(0);
+    //position.y = values(1);
+    //velocity.x = values(2);
+    //velocity.y = values(3);
+    if (position.x < -40) {
+      outOfBounds = 1;
     }
-  }
+    else if (position.y > 440) {
+      outOfBounds = 2;
+    }
+    else if (position.y < -40) {
+      outOfBounds = 3;
+    }
+    else {
+      outOfBounds = 4;
+    }
+    
+    switch (outOfBounds) {
+      case 1: 
+        position.x = values(0);
+        position.y = values(1);
+        velocity.x = values(2);
+        velocity.y = values(3);  
+        break;
+      case 2: 
+        position.x = values(0);
+        position.y = values(1);
+        velocity.x = values(2);
+        velocity.y = values(3);
+        break;
+      case 3: 
+        position.x = values(0);
+        position.y = values(1);
+        velocity.x = values(2);
+        velocity.y = values(3);
+        break;
+      case 4:
+        println(000000000000000000000);
+        break;
+      }
+    
+    }
+  
     
   //Function that generates x & y for position and velocity vectors depending on what number is put in it  
   float values (float i) {
