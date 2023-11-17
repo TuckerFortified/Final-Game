@@ -7,10 +7,12 @@ class background_details {
   //Establish vectors.
   PVector position;
   PVector velocity;
+  PVector shootDirection;
   
   background_details () {
     position = new PVector(0, 0);
     velocity = new PVector(0, 0);
+    shootDirection = new PVector(0,0);
   }
   
   void startUp () {
@@ -20,6 +22,7 @@ class background_details {
     position.y = random(0, 400);
     velocity.x = random(-10, -1);
     velocity.y = random(-0.2, 0.2);
+    shootDirection.random2D();
     
     //Set random size of the star
     if (velocity.x > -5) {
@@ -57,4 +60,13 @@ class background_details {
     }
     
   }
+  
+  //Shooting star function (makes it so when you start the game there is a chance a shooting star will fly by you)
+  void shoot () {
+    fill(255);
+    ellipse(position.x, position.y, 10, 10);
+    position.x = position.x + shootDirection.x;
+    position.y = position.y + shootDirection.y;
+  }
+  
 }
