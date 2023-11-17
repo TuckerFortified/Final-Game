@@ -11,7 +11,8 @@ boolean goRight = false;
 PVector playerPosition;
 
 //Declare objects
-background_details[] star = new background_details[40];
+ArrayList<background_details> star = new ArrayList<background_details>();
+//background_details[] star = new background_details[40];
 //background_details shootingStar;
 player spaceShip;
 meteor[] asteriod = new meteor[3];
@@ -35,8 +36,11 @@ void setup () {
   
   //Set up a for loop with an array to create multiple background detail objects
   for (int i = 0; i < 40; i++) {
-    star[i] = new background_details();
-    star[i].startUp();
+    //star[i] = new background_details();
+    //star[i].startUp();
+    star.add(new background_details());
+    background_details Star = star.get(i);
+    Star.startUp();
   }
   //shootingStar.startUp();
 }
@@ -52,7 +56,9 @@ void draw () {
   
   //Call the background details display function that will move and display the stars flying past the player.
   for (int i = 0; i < 40; i++) {
-      star[i].display();
+      //star[i].display();
+      background_details Star = star.get(i);
+      Star.display();
     }
     
   //Use an IF statement to see if the game has started or not, and if not then put a start screen.
@@ -134,6 +140,7 @@ void keyPressed () {
   //If the player is dead, press R to go back to tile screen
   if (key == 'r' && gameState == 2) {
     gameState = 0;
+    
   }
 }
 
