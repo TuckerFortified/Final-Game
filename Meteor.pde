@@ -19,7 +19,7 @@ class meteor {
     position.y = values(1);
     velocity.x = values(2);
     velocity.y = values(3);
-    println(position.x);
+    //println(position.x);
   }
   
   void display () {
@@ -27,7 +27,7 @@ class meteor {
     //Update the position of the vector
     position.x = position.x + velocity.x;
     position.y = position.y + velocity.y;
-    println(position.x);
+    //println(position.x);
     
     //Draw the meteor at the position of the vector
     if (velocity.x < -7) {
@@ -114,7 +114,7 @@ class meteor {
         velocity.y = values(3);
         break;
       case 4:
-        println(000000000000000000000);
+        //println(000000000000000000000);
         break;
       }
     

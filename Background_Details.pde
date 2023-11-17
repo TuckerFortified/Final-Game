@@ -13,6 +13,9 @@ class background_details {
     position = new PVector(0, 0);
     velocity = new PVector(0, 0);
     shootDirection = new PVector(0,0);
+    shootDirection.random2D();
+    println(shootDirection);
+    print('A');
   }
   
   void startUp () {
@@ -22,7 +25,6 @@ class background_details {
     position.y = random(0, 400);
     velocity.x = random(-10, -1);
     velocity.y = random(-0.2, 0.2);
-    shootDirection.random2D();
     
     //Set random size of the star
     if (velocity.x > -5) {

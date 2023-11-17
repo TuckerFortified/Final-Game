@@ -13,7 +13,7 @@ PVector playerPosition;
 //Declare objects
 ArrayList<background_details> star = new ArrayList<background_details>();
 //background_details[] star = new background_details[40];
-//background_details shootingStar;
+background_details shootingStar;
 player spaceShip;
 meteor[] asteriod = new meteor[3];
 
@@ -42,7 +42,8 @@ void setup () {
     background_details Star = star.get(i);
     Star.startUp();
   }
-  //shootingStar.startUp();
+  shootingStar = new background_details();
+  shootingStar.startUp();
 }
 
 
@@ -84,7 +85,7 @@ void draw () {
     spaceShip.move();  
     
     //Call the shooting star to move forever
-    //shootingStar.shoot();
+    shootingStar.shoot();
     
     //Call the meteor objects display function that will move and draw the meteor objects, as well as randomize their spawn locations, speeds, loop their movements, and check for the player collision.
     for (int i = 0; i < 3; i++) {
