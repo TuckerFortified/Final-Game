@@ -70,6 +70,14 @@ class background_details {
     position.y = position.y + shootDirection.y;
     println('a');
     println(shootDirection.x);
+    
+    //Makes it so the star stops moving after it has left the screen
+    if (frameCount > 1000) {
+      if (position.x > 410 || position.x < -10 || position.y > 410 || position.y < -10) {
+        position.set(-10, -10);
+        shootDirection.set(0, 0);
+      }
+    }
   }
   
 }
