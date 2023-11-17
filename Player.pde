@@ -4,7 +4,7 @@ class player {
   PVector position;
   
   //Making an array that will create a smoke effect behind the space ship
-    float [] smokeTrail = new float [6];
+  float [] smokeTrail = new float [6];
     
   player (float x, float y) {
     
@@ -27,6 +27,7 @@ class player {
     position.y = 200;
   }
   
+  //Fucnrtion to draw and move the player
   void move () {
     
     //Check the direction values, and change the vector values based on the direction. (the direction is determined by the variables inside the key pressed and released functions)
@@ -77,12 +78,5 @@ class player {
     fill(150, 150, 150, 80);
     ellipse(smokeTrail[0] - 15, smokeTrail[1] - 10, 15, 15);
 
-    //Update the collision values of the spaceship
-    //playerPosition = position;
-    //print(playerPosition);
-    //playerCollisionX = int(position.x);
-    //playerCollisionY = int(position.y);
-    //print(playerCollisionX);
-    //print(playerCollisionY);
   }
 }

@@ -19,17 +19,18 @@ class meteor {
     position.y = values(1);
     velocity.x = values(2);
     velocity.y = values(3);
-    //println(position.x);
+    println(position.x);
   }
   
+  //FUnction to display and draw vectors
   void display () {
 
     //Update the position of the vector
     position.x = position.x + velocity.x;
     position.y = position.y + velocity.y;
-    //println(position.x);
+    println(position.x);
     
-    //Draw the meteor at the position of the vector
+    //Draw the meteor at the position of the vector. Make it different sizes depending on speed
     if (velocity.x < -7) {
       fill(100, 51, 51);
       ellipse(position.x, position.y, 20, 20);
@@ -52,10 +53,8 @@ class meteor {
       ellipse(position.x + 15, position.y + 2, 4, 4);
       ellipse(position.x - 5, position.y + 20, 8, 8);
     }
-    
-    //Update the collision values of the meteor
 
-    //If the collision is overlapping with the player collision, then draw a death screen, and then set the gamestart to false
+    //If the collision is overlapping with the player collision, set the gamestart to false
     collision = dist(position.x, position.y, playerPosition.x, playerPosition.y);
     if (velocity.x < -7) {
       if (collision < 10) {
@@ -76,11 +75,6 @@ class meteor {
     
     
     //If the meteor is off of the screen, reset the position and randomize the direction
-    //if (position.x < -40 || position.y > 440 || position.y < -40) {
-    //position.x = values(0);
-    //position.y = values(1);
-    //velocity.x = values(2);
-    //velocity.y = values(3);
     if (position.x < -40) {
       outOfBounds = 1;
     }
@@ -114,7 +108,7 @@ class meteor {
         velocity.y = values(3);
         break;
       case 4:
-        //println(000000000000000000000);
+        println(000000000000000000000);
         break;
       }
     

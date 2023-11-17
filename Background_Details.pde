@@ -17,6 +17,7 @@ class background_details {
     print('A');
   }
   
+  //Function for setting up all of the stars and the shooting star
   void startUp () {
     
     //Set random position and speed for vectors
@@ -34,6 +35,7 @@ class background_details {
     }
   }
   
+  //Function that displays the stars on screen
   void display () {
 
     //Change the value of the vector by adding the speed value
@@ -51,7 +53,7 @@ class background_details {
       position.y = random(0, 400);
       velocity.x = random(-10, -1);
       velocity.y = random(-0.2, 0.2);
-      //print(velocity.x);
+      print(velocity.x);
       if (velocity.x > -5) {
         starSize = int(random(1, 2.9));
       }
