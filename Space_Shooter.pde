@@ -12,7 +12,7 @@ PVector playerPosition;
 
 //Declare objects
 background_details[] star = new background_details[40];
-background_details shootingStar;
+//background_details shootingStar;
 player spaceShip;
 meteor[] asteriod = new meteor[3];
 
@@ -38,6 +38,7 @@ void setup () {
     star[i] = new background_details();
     star[i].startUp();
   }
+  //shootingStar.startUp();
 }
 
 
@@ -77,7 +78,7 @@ void draw () {
     spaceShip.move();  
     
     //Call the shooting star to move forever
-    shootingStar.shoot();
+    //shootingStar.shoot();
     
     //Call the meteor objects display function that will move and draw the meteor objects, as well as randomize their spawn locations, speeds, loop their movements, and check for the player collision.
     for (int i = 0; i < 3; i++) {
@@ -98,6 +99,7 @@ void draw () {
     textSize(15);
     text("Press R to return to title screen", 120, 190);
   }
+  
 }
 
 void keyPressed () {
@@ -132,7 +134,6 @@ void keyPressed () {
   //If the player is dead, press R to go back to tile screen
   if (key == 'r' && gameState == 2) {
     gameState = 0;
-    //star.size[];
   }
 }
 
