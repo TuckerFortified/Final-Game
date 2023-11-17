@@ -76,6 +76,7 @@ class background_details {
     //Makes it so the star stops moving after it has left the screen
     if (frameCount > 1000) {
       if (position.x > 410 || position.x < -10 || position.y > 410 || position.y < -10) {
+        //.set() is the function I looked up on the processing documentation, I have nevr used it before
         position.set(-10, -10);
         shootDirection.set(0, 0);
       }
