@@ -12,8 +12,7 @@ class background_details {
   background_details () {
     position = new PVector(0, 0);
     velocity = new PVector(0, 0);
-    shootDirection = new PVector(0,0);
-    shootDirection.random2D();
+    shootDirection = PVector.random2D();
     println(shootDirection);
     print('A');
   }
@@ -65,10 +64,12 @@ class background_details {
   
   //Shooting star function (makes it so when you start the game there is a chance a shooting star will fly by you)
   void shoot () {
-    fill(255);
+    fill(random(0, 255));
     ellipse(position.x, position.y, 10, 10);
     position.x = position.x + shootDirection.x;
     position.y = position.y + shootDirection.y;
+    println('a');
+    println(shootDirection.x);
   }
   
 }

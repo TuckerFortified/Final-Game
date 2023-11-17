@@ -60,6 +60,7 @@ void draw () {
       //star[i].display();
       background_details Star = star.get(i);
       Star.display();
+      shootingStar.shoot();
     }
     
   //Use an IF statement to see if the game has started or not, and if not then put a start screen.
@@ -85,7 +86,7 @@ void draw () {
     spaceShip.move();  
     
     //Call the shooting star to move forever
-    shootingStar.shoot();
+    //shootingStar.shoot();
     
     //Call the meteor objects display function that will move and draw the meteor objects, as well as randomize their spawn locations, speeds, loop their movements, and check for the player collision.
     for (int i = 0; i < 3; i++) {
