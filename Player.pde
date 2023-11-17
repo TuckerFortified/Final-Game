@@ -3,8 +3,22 @@ class player {
   //Establish vectors
   PVector position;
   
+  //Making an array that will create a smoke effect behind the space ship
+    float [] smokeTrail = new float [6];
+    
   player (float x, float y) {
+    
+    //Establishing vectors
     position = new PVector(x, y);
+    
+    //Making an array that will create a smoke effect behind the space ship
+    smokeTrail[0] = 70;
+    smokeTrail[2] = 70;
+    smokeTrail[4] = 70;
+    smokeTrail[1] = 200;
+    smokeTrail[3] = 200;
+    smokeTrail[5] = 200;
+    
   }
   
   //Function to hide the player off camera
@@ -47,7 +61,21 @@ class player {
     triangle(position.x - 45, position.y, position.x - 40, position.y - 2, position.x - 40, position.y + 2);
     triangle(position.x - 45, position.y - 4, position.x - 40, position.y - 2, position.x - 40, position.y - 5);
     triangle(position.x - 45, position.y + 4, position.x - 40, position.y + 5, position.x - 40, position.y + 2);
-
+    
+    //Moving and drawing the smoke effect
+    for (int i = 5; i > -1; i--) {
+      if (i > 1) {
+        smokeTrail[i - 2] = smokeTrail[i];
+      }
+    }
+    smokeTrail[4] = position.x - 40;
+    smokeTrail[5] = position.y;
+    fill(150, 150, 150, 200);
+    ellipse(smokeTrail[4] - 5, smokeTrail[5] - 2, 7, 7);
+    fill(150, 150, 150, 140);
+    ellipse(smokeTrail[2] - 10, smokeTrail[3] - 5, 10, 10);
+    fill(150, 150, 150, 80);
+    ellipse(smokeTrail[0] - 15, smokeTrail[1] - 10, 15, 15);
 
     //Update the collision values of the spaceship
     //playerPosition = position;
