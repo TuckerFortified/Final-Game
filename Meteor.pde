@@ -26,6 +26,7 @@ class meteor {
   void display () {
 
     //Update the position of the vector
+    //Skills Inventory 39. Do some basic physics.
     position.x = position.x + velocity.x;
     position.y = position.y + velocity.y;
     println(position.x);
@@ -116,7 +117,9 @@ class meteor {
   
     
   //Function that generates x & y for position and velocity vectors depending on what number is put in it  
+  //Skills Inventory 21. Declare & call a function with a return type.
   float values (float i) {
+    //Skills Inventory 9. Local Variable.
     float s = 0;
     if (i == 0) {
       s = random(450, 700);

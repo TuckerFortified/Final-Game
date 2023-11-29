@@ -5,7 +5,8 @@ class player {
   
   //Making an array that will create a smoke effect behind the space ship
   float [] smokeTrail = new float [6];
-    
+  
+  //Skills Inventory 30. Write a constructor function with parameters.  
   player (float x, float y) {
     
     //Establishing vectors
@@ -45,6 +46,7 @@ class player {
     }
     
     //Making it so the player cannot leave the screen
+    //Skills Inventory 6. Constrain.
     position.x = constrain(position.x, 45, 360);
     position.y = constrain(position.y, 15, 385);
     

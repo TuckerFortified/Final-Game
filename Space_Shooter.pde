@@ -33,6 +33,7 @@ void setup () {
   
   //Set up a for loop with an arrayList to create multiple background detail objects
   for (int i = 0; i < 40; i++) {
+    //Skills Inventory 36. Use an ArrayList Method.
     star.add(new background_details());
     background_details Star = star.get(i);
     Star.startUp();
@@ -63,6 +64,7 @@ void draw () {
   if (gameState == 0) {
     
     //Drawing the main menu
+    //Skills Inventory 3. Modes.
     rectMode(CENTER);
     fill(0);
     rect(200, 20, 400, 40);

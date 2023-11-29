@@ -18,6 +18,7 @@ class background_details {
   }
   
   //Function for setting up all of the stars and the shooting star
+  //SKills Inventory 20. Declare & call a function with no parameters and no return type.
   void startUp () {
     
     //Set random position and speed for vectors
@@ -76,7 +77,8 @@ class background_details {
     //Makes it so the star stops moving after it has left the screen
     if (frameCount > 1000) {
       if (position.x > 410 || position.x < -10 || position.y > 410 || position.y < -10) {
-        //.set() is the function I looked up on the processing documentation, I have nevr used it before
+        //Skills Inventory 43.  look up a method in the PVector class that is new to you
+        //.set() is the function I looked up on the processing documentation, I have never used it before
         position.set(-10, -10);
         shootDirection.set(0, 0);
       }
